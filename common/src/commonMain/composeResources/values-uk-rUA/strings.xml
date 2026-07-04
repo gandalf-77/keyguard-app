@@ -279,6 +279,9 @@
     <string name="select_key_file">Обрати файл ключа</string>
     <string name="select_database_file">Обрати файл бази даних</string>
     <string name="replace_database_file">Замінити файл бази даних</string>
+    <string name="database_location_title">Database location</string>
+    <string name="database_location_local">Local file</string>
+    <string name="database_location_webdav">WebDAV</string>
     <string name="open_database">Відкрити базу даних</string>
     <string name="create_database">Створити базу даних</string>
     <string name="addaccount_method_header_title">Додати обліковий запис</string>
@@ -600,6 +603,7 @@
     <string name="error_invalid_key">Некоректний ключ</string>
     <string name="error_invalid_card_number">Недійсний номер картки</string>
     <string name="error_webdav_url_required">Потрібно вказати URL-адресу WebDAV</string>
+    <string name="error_webdav_file_url_required">Enter the full WebDAV URL to a file resource</string>
     <string name="error_incorrect_password">Невірний пароль</string>
     <string name="error_not_found">Не знайдено</string>
     <string name="error_file_must_be_500_mb_or_smaller">Розмір файлу має бути 500 Мб або менше</string>
@@ -1196,6 +1200,7 @@
     <string name="settings_developer_header_title">Розробник</string>
     <string name="settings_watchtower_header_title">Вартова вежа</string>
     <string name="settings_automatic_backups_header_title">Резервні копії</string>
+    <string name="settings_navigation_items_header_title">Navigation items</string>
     <string name="settings_open_source_licenses_header_title">Ліцензії відкритого програмного забезпечення</string>
     <string name="pref_section_premium_title">Преміум</string>
     <string name="pref_section_options_title">Опції</string>
@@ -1296,8 +1301,16 @@
     <string name="pref_item_automatic_backups_retention_value">%1$d знімків</string>
     <string name="pref_item_automatic_backups_disable_title">Вимкнути автоматичне резервне копіювання</string>
     <string name="pref_item_automatic_backups_disable_message">Це лише вимикає майбутні автоматичні резервні копії. Воно очищає локальну теку, пароль та вибір вкладень із Keyguard. Наявний репозиторій резервних копій і файли в тій теці не видаляються.</string>
+    <string name="pref_item_nav_items_title">Navigation items</string>
     <string name="pref_item_nav_label_title">Показувати підписи на кнопках навігації</string>
-    <string name="pref_item_nav_hidden_send_title">Hide Send tab</string>
+    <string name="navigation_items_add_item_title">Add item</string>
+    <string name="navigation_items_reset_confirmation_title">Reset navigation items?</string>
+    <string name="navigation_items_reset_confirmation_text">This will restore the default navigation order and visibility. Custom filters are not deleted, but their navigation items will be removed.</string>
+    <string name="navigation_items_built_in_text">Built-in destination</string>
+    <string name="navigation_items_custom_filter_text">Custom filter</string>
+    <string name="navigation_items_missing_filter_title">Custom filter</string>
+    <string name="navigation_items_missing_filter_text">Filter not found</string>
+    <string name="navigation_items_predefined_route_text">Predefined route</string>
     <string name="pref_item_app_version_title">Версія застосунку</string>
     <string name="pref_item_app_build_date_title">Дата збірки застосунку</string>
     <!--
@@ -1409,6 +1422,22 @@
     <string name="pref_item_ssh_agent_filters_summary_all">Всі ключі доступні</string>
     <string name="pref_item_ssh_agent_filters_summary_active">Фільтри активні</string>
     <string name="pref_item_ssh_agent_history_title">Журнал запитів</string>
+    <string name="pref_item_license_key_title">Link existing entitlement token</string>
+    <string name="pref_item_license_key_field_label">Entitlement token</string>
+    <string name="pref_item_license_key_message_redeemed">Entitlement token linked successfully</string>
+    <string name="pref_item_license_key_message_invalid">Invalid or expired key</string>
+    <string name="pref_item_license_key_status_active">Active</string>
+    <string name="pref_item_license_key_status_invalid">Invalid</string>
+    <string name="pref_item_license_key_status_revoked">Revoked</string>
+    <string name="pref_item_license_key_status_expired">Expired</string>
+    <string name="pref_item_license_key_status_available">Available</string>
+    <string name="pref_item_license_sync_title">Obtain entitlement token</string>
+    <string name="pref_item_license_sync_text">Verifies your active store purchase and generates an entitlement token bound to the purchase. Use the token to transfer the purchase to your other devices.</string>
+    <string name="pref_item_license_sync_requested">Entitlement token was requested</string>
+    <string name="pref_item_license_sync_success">Entitlement token synced successfully</string>
+    <string name="pref_item_license_sync_already">Current entitlement token is already active</string>
+    <string name="pref_item_license_sync_no_purchases">No eligible purchase found</string>
+    <string name="pref_item_license_sync_failed">Could not obtain entitlement token</string>
     <string name="pref_item_biometric_unlock_title">Біометричне розблокування</string>
     <string name="pref_item_biometric_unlock_require_confirmation_title">Вимагати підтвердження</string>
     <string name="pref_item_biometric_unlock_require_confirmation_text">Вимагати додаткового підтвердження після успішної біометричної автентифікації</string>
@@ -1540,10 +1569,10 @@
     <string name="datasafety_remote_text">Віддалені дані зберігаються на серверах Bitwarden з шифруванням з нульовим знанням.</string>
     <string name="webdav_settings_header_title">Налаштування сервера WebDAV</string>
     <string name="webdav_settings_url_title">URL-адреса WebDAV</string>
-    <string name="webdav_settings_url_hint">https://example.com/remote.php/dav/files/me/Keyguard/</string>
     <string name="webdav_settings_auth_note">Якщо ваш сервер WebDAV вимагає автентифікації, введіть тут облікові дані вашого сервера. Не вводьте свій головний пароль.</string>
     <string name="webdav_settings_test_title">Перевірити з'єднання</string>
     <string name="webdav_settings_test_text">Записує та видаляє невеликий тестовий файл, щоб перевірити доступ до сервера.</string>
+    <string name="webdav_settings_test_text_read_only">Reads the resource to verify server access.</string>
     <string name="webdav_settings_test_success">З'єднання WebDAV перевірено.</string>
     <string name="webdav_settings_password_requires_username_error">Введіть ім'я користувача, перш ніж встановлювати пароль WebDAV.</string>
     <!-- Title of the 'Localization contributors' screen -->
